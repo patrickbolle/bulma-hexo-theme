@@ -1,0 +1,39 @@
+<div class="container">
+  <!-- Title -->
+  <div class="container">
+    <h1 class="title is-2 green">
+      Blog
+      <hr>
+    </h1>
+  </div>
+  <div class="columns">
+    <div class="column is-three-quarters">
+      <div class="container content">
+        <% page.posts.each(function(item){ %>
+        <%- partial('_partial/article-archive', {item: item}) %>
+        <% }); %>
+        <%- partial('_partial/pagination') %>
+      </div>
+    </div>
+    <div class="column is-one-quarter"
+      <aside class="menu">
+        <p class="menu-label">
+          Site Categories
+        </p>
+        <ul class="menu-list">
+          <% site.categories.sort('name').each(function(item){ %>
+          <li><a data-src="<%- config.root %><%- item.path %>" href="#<%= item.name %>" title="<%= item.name %>"><%= item.name %></a></li>
+          <% }); %>
+        </ul>
+        <p class="menu-label">
+          Site Tags
+        </p>
+        <ul class="menu-list">
+          <% site.tags.sort('name').each(function(item){ %>
+          <li><a data-src="<%- config.root %><%- item.path %>" href="#<%= item.name %>" title="<%= item.name %>"><%= item.name %></a></li>
+          <% }); %>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</div>

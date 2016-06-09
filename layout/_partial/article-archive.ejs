@@ -1,0 +1,23 @@
+<div class="blog-post">
+
+    <!-- Title -->
+    <h2 class="blog title is-3">
+        <a href="<%- config.root %><%- item.path %>">
+            <%- item.title || item.link%>
+            <div class="subtitle is-5"><%= item.date.format(config.date_format) %></div>
+        </a>
+    </h2>
+    <!-- Content -->
+   <%- item.excerpt || item.content %>
+
+   <!-- Only display the Read More link if we are displaying an excerpt -->
+   <% if(item.excerpt) { %>
+       <p>
+           <a class="button is-link" href="<%- config.root %><%- item.path %>">
+               <%= theme.excerpt_link %>
+           </a>
+       </p>
+   <% } %>
+   <hr>
+
+</div>

@@ -1,0 +1,22 @@
+<div class="box">
+  <article class="media">
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <a href="<%- config.root %><%- item.path %>">
+            <%- item.title %> <%= item.date.format(config.date_format) %>
+          </a>
+          <br>
+          <%- item.excerpt || item.content %>
+          <% if(item.excerpt) { %>
+             <p>
+                 <a href="<%- config.root %><%- item.path %>">
+                     <%= theme.excerpt_link %>
+                 </a>
+             </p>
+           <% } %>
+        </p>
+      </div>
+    </div>
+  </article>
+</div>

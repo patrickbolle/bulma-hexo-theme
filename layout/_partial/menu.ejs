@@ -1,0 +1,21 @@
+  <nav class="nav">
+    <div class="container">
+      <div class="nav-left">
+        <a class="nav-item" href="/">
+          <h4 class="subtitle is-4">patrick bollenbach</h4>
+        </a>
+      </div>
+
+      <span class="nav-toggle" id="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+
+      <div class="nav-right nav-menu" id="nav-menu">
+        <% for (var i in theme.menu){ %>
+            <a class="nav-item" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+        <% } %>
+      </div>
+    </div>
+  </nav>

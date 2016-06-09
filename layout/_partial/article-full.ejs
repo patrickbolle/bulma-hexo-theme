@@ -1,0 +1,43 @@
+<div class="container">
+    <!-- Title -->
+    <div class="container">
+      <h1 class="title is-2 green">
+        <%- item.title || item.link%>
+        <hr>
+      </h1>
+    </div>
+    <div class="columns">
+      <% if(page.categories) { %>
+        <div class="column is-three-quarters">
+      <% } else{ %>
+        <div class="column">
+      <% } %>
+        <div class="container content">
+          <!-- Content -->
+          <%- item.content %>
+        </div>
+      </div>
+      <% if(page.categories) { %>
+        <div class="column is-one-quarter"
+          <aside class="menu">
+            <p class="menu-label">
+              Post Categories
+            </p>
+            <ul class="menu-list">
+              <% page.categories.sort('name').each(function(item){ %>
+              <li><a data-src="<%- config.root %><%- item.path %>" href="#<%= item.name %>" title="<%= item.name %>"><%= item.name %></a></li>
+              <% }); %>
+            </ul>
+            <p class="menu-label">
+              Post Tags
+            </p>
+            <ul class="menu-list">
+              <% page.tags.sort('name').each(function(item){ %>
+              <li><a data-src="<%- config.root %><%- item.path %>" href="#<%= item.name %>" title="<%= item.name %>"><%= item.name %></a></li>
+              <% }); %>
+            </ul>
+          </aside>
+        </div>
+      <% } %>
+    </div>
+</div>
